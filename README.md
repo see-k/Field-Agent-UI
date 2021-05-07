@@ -46,45 +46,24 @@ Along with contents already available in the field Agent Project folder, the fol
      - [ ] Update application.properties
      - [ ] handshake with MySql running on docker container
       
-- [ ] Step 2: REACT APP  
+- [ ] Step 2: REACT APP
       
       Create React App
      - [ ] npx create react app
+     - [ ] implement DisplayAgents component
+     - [ ] implement AddAgent component
+     - [ ] implement UpdateAgent component
+     - [ ] implement DeleteAgent component
      
      
-- [ ] Step 3: Aliases
+- [ ] Step 3: Controller Tests
 
-       Domain Layer
-     - [ ] FindById
-     - [ ] add
-     - [ ] Update
-     - [ ] Delete
-     - [ ] Validate
+       Agent Controller
+     - [ ] GetMapping findAll -> DisplayAgents response
+     - [ ] PostMapping add -> AddAgent response 
+     - [ ] PutMapping update -> UpdateAgent response
+     - [ ] DeleteMapping delete -> DeleteAgent response
      
-      Domain layer Tests
-     - [X] Set up spring-boot- starter-test: Mockito 
-     - [ ] Test all: Domain layer methods for postive cases
-     - [ ] Test all: Domain layer methods for negative cases
-
-      Models
-     - [X] Aliases
-
-      Jdbc Template Repository
-     - [X] AliasesMapper (Class in Mapper package)
-     - [ ] FindById
-     - [ ] add
-     - [ ] Update
-     - [ ] Delete
-
-      Jdbc Template layer Tests
-     - [ ] Set up spring-boot- starter-test: Mockito 
-     - [ ] Test all: Domain layer methods for postive cases
-     - [ ] Test all: Domain layer methods for negative cases
-    
-    
- ```diff
- - currently under research: Step 4 and 5
- ```
 - [ ] Step 4: Global exception Handling
      - [ ] include controller advice, CORS, and profile
      - [ ] Illegal arguement exception and response
