@@ -32,7 +32,7 @@ Use MySQL workbench 8.0 CE to run queries on the following files
 - field-agent-schema-test.sql
 
 Use Visual Studio code to send HTTP requests using the file below
-- demoScript.http
+- App.js
 
 To launch server
 - compile the program -->javac App.java
