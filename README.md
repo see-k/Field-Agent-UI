@@ -49,7 +49,7 @@ Along with contents already available in the field Agent Project folder, the fol
 - [ ] Step 2: REACT APP  
       
       Create React App
-     -[ ] npx create react app
+     - [ ] npx create react app
      
      
 - [ ] Step 3: Aliases
