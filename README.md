@@ -22,9 +22,11 @@ _______________________________________________________
 ```
 ___________________________________________________
 ### High Level Requirements
- - Create full HTTP CRUD for security clearance.
- - Create full HTTP CRUD for agent aliases.
- - Implement global error handling.
+Implement a full CRUD UI for agents.
+- Display all agents.
+- Add an agent.
+- Update an agent.
+- Delete an agent.
 ___________________________________________________
 ### Instructions
 Use MySQL workbench 8.0 CE to run queries on the following files
