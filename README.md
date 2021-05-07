@@ -106,25 +106,19 @@ ____________________________________________________________________
 
 |DATE |TASK ID|ESTIMATED TIME (HRS) | START TIME (HRS:MINS)|END TIME (HRS:MINS)| STATUS
 |:---:| :---: | :---:               | :---:                |:---:              |:---:
-|4.30.2021| Step 1: Research| 2              | 5:00 PM | 6:00 PM | Completed
-|4.30.2021| Step 1: Planning and diagrams  | 4              | 12:00 PM | 4:00 PM | Completed
-|4.30.2021| Step 1: Set up| 0.5              | 6:00 PM | 6:30 PM | Completed
-|4.30.2021| Step 3: Aliases Models | 0.5              | 6:30 PM  | 6:35 PM | Completed
-|4.30.2021| Step 4: Create Global exception handling| 0.5              | _ | _ | Not Started
-|4.30.2021| Step 5: Create HTTP Client | 0.5              | _ | _ | Completed
-|5.01.2021| Step 2: Security Clearance Domain layer implementation | 2              | 6:00 PM | _ | Completed
-|5.01.2021| Step 2: Security Clearance Domain layer Tests | 1              | _  | _ | Not Started
-|5.01.2021| Step 2: Security Clearance Jdbc template repository implementation | 2             | 4:00 PM | _ | In progress
-|5.01.2021| Step 2: Security Clearance Jdbc template repository tests | 1     | _  | _ | Not Started
-|5.01.2021| Step 3: Aliases Domain layer implementation | 2              | _  | _ | Not Started
-|5.01.2021| Step 3: Aliases Domain layer Tests | 2              | _  | _ | Not Started
-|5.01.2021| Step 3: Aliases Jdbc template repository implementation | 2             | _  | _ | Not Started
-|5.01.2021| Step 3: Aliases Jdbc template repository tests | 2     | _  | _ | Not Started
-|5.01.2021| Step 4: Update Global exception handling| 0.5              | _ | _ | Not Started
-|5.01.2021| Step 5: Update HTTP Client | 0.5              | _ | _ | Not Started
-|5.02.2021| Stretch Goal #1 | 4       | _  | _ | Not Started
-|5.02.2021| Stretch Goal #2 | 4      | _  | _ | Not Started
-|5.02.2021| Bugs and Errors: find and fix #1 | 1  | _  | _ | Not Started
+|5.07.2021| Step 1: Research| 1 | 11:00 AM | 12:00 PM | Completed
+|5.07.2021| Step 1: Planning and diagrams  | 4 | 12:00 PM | 4:00 PM | Completed
+|5.07.2021| Step 1: Set up database | 0.5              | _  | _ | Not Started
+|5.07.2021| Step 2: Create react app| 0.5  | _  | _ | Not Started
+|5.07.2021| Step 2: Implement DisplayAgents component| 2 | _ | _ | Not Started
+|5.07.2021| Step 2: Implement AddAgent component| 2 | _ | _ | Not Started
+|5.07.2021| Step 2: Implement UpdateAgent component| 2 | _ | _ | Not Started
+|5.07.2021| Step 2: Implement DeleteAgent component| 2 | _ | _ | Not Started
+|5.07.2021| Step 3: Agent Controller Tests | 2              | _  | _ | Not Started
+|5.08.2021| Step 4: Update Global Exception handling | 1              | _ | _ | Not Started
+|5.08.2021| Stretch Goal #1 | 4       | _  | _ | Not Started
+|5.08.2021| Stretch Goal #2 | 4      | _  | _ | Not Started
+|5.08.2021| Bugs and Errors: find and fix #1 | 1  | _  | _ | Not Started
 
 Table 1
  ________________________________________________________
