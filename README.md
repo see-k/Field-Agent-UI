@@ -145,7 +145,7 @@ ____________________________________________________________________
 ```diff
 + Use link below to go to project board
 ```
-[Link to Public Trello Board: MO7 Mastery Project](https://trello.com/b/JA7GwaAX/m07)
+[Link to Public Trello Board: MO7 Mastery Project](https://trello.com/b/UxKWWpzZ/m08-field-agent-ui)
 
 ## Time Tracker
 
