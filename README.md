@@ -42,14 +42,14 @@ To launch server
 _______________________________________________________
 #### Code Sequence Steps:
 Along with contents already available in the field Agent Project folder, the following solutions will be implemented as well
-- [ ] Step 1: Set up database
-     - [ ] Update application.properties
-     - [ ] handshake with MySql running on docker container
+- [X] Step 1: Set up database
+     - [X] Update application.properties
+     - [X] handshake with MySql running on docker container
       
 - [ ] Step 2: REACT APP
       
       Create React App
-     - [ ] npx create react app
+     - [X] npx create react app
      - [ ] implement DisplayAgents component
      - [ ] implement AddAgent component
      - [ ] implement UpdateAgent component
@@ -106,11 +106,11 @@ ____________________________________________________________________
 
 |DATE |TASK ID|ESTIMATED TIME (HRS) | START TIME (HRS:MINS)|END TIME (HRS:MINS)| STATUS
 |:---:| :---: | :---:               | :---:                |:---:              |:---:
-|5.07.2021| Step 1: Research| 1 | 2:00 PM | _ | In progress
+|5.07.2021| Step 1: Research| 1 | 2:00 PM | 3:00 PM | Completed
 |5.07.2021| Step 1: Planning and diagrams  | 4 | 12:00 PM | 2:00 PM | Completed
-|5.07.2021| Step 1: Set up database | 0.5              | _ | _ | In progress
-|5.07.2021| Step 2: Create react app| 0.5  | _  | _ | Not Started
-|5.07.2021| Step 2: Implement DisplayAgents component| 2 | _ | _ | Not Started
+|5.07.2021| Step 1: Set up database | 0.5              | 3:30 PM | 3:45 PM | Completed
+|5.07.2021| Step 2: Create react app| 0.5  | 3:30 PM | 3:45 PM | Completed
+|5.07.2021| Step 2: Implement DisplayAgents component| 2 | 4:00 PM | _ | In progress
 |5.07.2021| Step 2: Implement AddAgent component| 2 | _ | _ | Not Started
 |5.07.2021| Step 2: Implement UpdateAgent component| 2 | _ | _ | Not Started
 |5.07.2021| Step 2: Implement DeleteAgent component| 2 | _ | _ | Not Started
