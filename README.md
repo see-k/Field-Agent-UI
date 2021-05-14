@@ -89,9 +89,11 @@ Along with contents already available in the field Agent Project folder, the fol
      - [ ] Register
      - [ ] Not found
     
-- [X] Step 5: HTTP Client
-    - Launch spring on terminal
-    - Send requests to test added contents in API
+- [ ] Step 7: User Registration and Login
+     - [ ] Implement user registration through endpoints
+     - [ ] Require a user to login to view the Agents CRUD UI.
+     - [ ] Display the logged in user's username in the header.
+     - [ ] Provide a way for the user to logout
 
  ______________________________________________________________________
 ## Flow Chart
@@ -127,19 +129,16 @@ ____________________________________________________________________
 
 |DATE |TASK ID|ESTIMATED TIME (HRS) | START TIME (HRS:MINS)|END TIME (HRS:MINS)| STATUS
 |:---:| :---: | :---:               | :---:                |:---:              |:---:
-|5.07.2021| Step 1: Research| 1 | 2:00 PM | 3:00 PM | Completed
-|5.07.2021| Step 1: Planning and diagrams  | 4 | 12:00 PM | 2:00 PM | Completed
-|5.07.2021| Step 1: Set up database | 0.5              | 3:30 PM | 3:45 PM | Completed
-|5.07.2021| Step 2: Create react app| 0.5  | 3:30 PM | 3:45 PM | Completed
-|5.07.2021| Step 2: Implement DisplayAgents component| 2 | 4:00 PM |  | In progress
-|5.07.2021| Step 2: Implement AddAgent component| 2 | _ | _ | Not Started
-|5.07.2021| Step 2: Implement UpdateAgent component| 2 | _ | _ | Not Started
-|5.07.2021| Step 2: Implement DeleteAgent component| 2 | _ | _ | Not Started
-|5.07.2021| Step 3: Agent Controller Tests | 2              | _  | _ | Not Started
-|5.08.2021| Step 4: Update Global Exception handling | 1              | _ | _ | Not Started
-|5.08.2021| Stretch Goal #1 | 4       | _  | _ | Not Started
-|5.08.2021| Stretch Goal #2 | 4      | _  | _ | Not Started
-|5.08.2021| Bugs and Errors: find and fix #1 | 1  | _  | _ | Not Started
+|5.14.2021| Step 1: Research| 2 | 1:00 PM | 3:00 PM | In progress
+|5.14.2021| Step 1: Planning and diagrams  | 2 | 11:00 PM | 1:00 PM | Completed
+|5.14.2021| Step 6: Implement Client Side Routes | 2 | _ | _ | Not started
+|5.14.2021| Step 7: Implement User Registration| 1 | _ | _ | Not started
+|5.14.2021| Step 7: Require a user to login to view the Agents CRUD UI| 1 | _ | _ | Not started
+|5.14.2021| Step 7: Display the logged in user's username in the header.| 0.5 | _ | _ | Not Started
+|5.14.2021| Step 7: Provide a way for the user to logout| 0.5 | _ | _ | Not Started
+|5.15.2021| Stretch Goal #1 | 4       | _  | _ | Not Started
+|5.15.2021| Stretch Goal #2 | 4      | _  | _ | Not Started
+|5.15.2021| Bugs and Errors: find and fix #1 | 1  | _  | _ | Not Started
 
 Table 1
  ________________________________________________________
