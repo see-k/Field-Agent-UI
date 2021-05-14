@@ -1,6 +1,6 @@
 ____________________________________
 # Field-Agent User Interface
-### Dev10 Assessment: M08
+### Dev10 Assessment: M08 & MO9
 #### by Chike Okonta
 #### 05/10/2021
 
@@ -40,35 +40,35 @@ To launch server
 - compile the program -->javac App.java
 - launch the program --> java App
 _______________________________________________________
-#### Code Sequence Steps:
+#### Code Sequence Steps for MO8:
 Along with contents already available in the field Agent Project folder, the following solutions will be implemented as well
 - [X] Step 1: Set up database
      - [X] Update application.properties
      - [X] handshake with MySql running on docker container
       
-- [ ] Step 2: REACT APP
+- [X] Step 2: REACT APP
       
       Create React App
      - [X] npx create react app
-     - [ ] implement DisplayAgents component
-     - [ ] implement AddAgent component
-     - [ ] implement UpdateAgent component
-     - [ ] implement DeleteAgent component
+     - [X] implement DisplayAgents component
+     - [X] implement AddAgent component
+     - [X] implement UpdateAgent component
+     - [X] implement DeleteAgent component
      
      
-- [ ] Step 3: Controller Tests
+- [X] Step 3: Controller Tests
 
        Agent Controller
-     - [ ] GetMapping findAll -> DisplayAgents response
-     - [ ] PostMapping add -> AddAgent response 
-     - [ ] PutMapping update -> UpdateAgent response
-     - [ ] DeleteMapping delete -> DeleteAgent response
-     
-- [ ] Step 4: Global exception Handling
-     - [ ] include controller advice, CORS, and profile
-     - [ ] Illegal arguement exception and response
-     - [ ] Nullpointer exception and response
-     - [ ] DataAccess exception and response
+     - [X] GetMapping findAll -> DisplayAgents response
+     - [X] PostMapping add -> AddAgent response 
+     - [X] PutMapping update -> UpdateAgent response
+     - [X] DeleteMapping delete -> DeleteAgent response
+    
+- [X] Step 4: Global exception Handling
+     - [X] include controller advice, CORS, and profile
+     - [X] Illegal arguement exception and response
+     - [X] Nullpointer exception and response
+     - [X] DataAccess exception and response
 - [X] Step 5: HTTP Client
     - Launch spring on terminal
     - Send requests to test added contents in API
@@ -110,7 +110,7 @@ ____________________________________________________________________
 |5.07.2021| Step 1: Planning and diagrams  | 4 | 12:00 PM | 2:00 PM | Completed
 |5.07.2021| Step 1: Set up database | 0.5              | 3:30 PM | 3:45 PM | Completed
 |5.07.2021| Step 2: Create react app| 0.5  | 3:30 PM | 3:45 PM | Completed
-|5.07.2021| Step 2: Implement DisplayAgents component| 2 | 4:00 PM | _ | In progress
+|5.07.2021| Step 2: Implement DisplayAgents component| 2 | 4:00 PM |  | In progress
 |5.07.2021| Step 2: Implement AddAgent component| 2 | _ | _ | Not Started
 |5.07.2021| Step 2: Implement UpdateAgent component| 2 | _ | _ | Not Started
 |5.07.2021| Step 2: Implement DeleteAgent component| 2 | _ | _ | Not Started
