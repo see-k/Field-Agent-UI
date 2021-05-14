@@ -2,7 +2,7 @@ ____________________________________
 # Field-Agent User Interface
 ### Dev10 Assessment: M08 & MO9
 #### by Chike Okonta
-#### 05/10/2021
+#### 05/17/2021
 
 Designed using 
 💾 MySQL Workbench 8.0 CE
@@ -40,7 +40,10 @@ To launch server
 - compile the program -->javac App.java
 - launch the program --> java App
 _______________________________________________________
-#### Code Sequence Steps for MO8:
+#### Code Sequence Steps:
+```diff
+- M08 CODE SEQUENCE: 05/10/2021
+```
 Along with contents already available in the field Agent Project folder, the following solutions will be implemented as well
 - [X] Step 1: Set up database
      - [X] Update application.properties
@@ -72,6 +75,10 @@ Along with contents already available in the field Agent Project folder, the fol
 - [X] Step 5: HTTP Client
     - Launch spring on terminal
     - Send requests to test added contents in API
+
+```diff
++ M09 CODE SEQUENCE: 05/17/2021
+```
  ______________________________________________________________________
 ## Flow Chart
  ```diff
