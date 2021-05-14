@@ -42,7 +42,7 @@ To launch server
 _______________________________________________________
 #### Code Sequence Steps:
 ```diff
-- M08 CODE SEQUENCE: 05/10/2021
++ M08 CODE SEQUENCE: 05/10/2021
 ```
 Along with contents already available in the field Agent Project folder, the following solutions will be implemented as well
 - [X] Step 1: Set up database
@@ -77,8 +77,20 @@ Along with contents already available in the field Agent Project folder, the fol
     - Send requests to test added contents in API
 
 ```diff
-+ M09 CODE SEQUENCE: 05/17/2021
+- M09 CODE SEQUENCE: 05/17/2021
 ```
+- [ ] Step 6: Implement Client - Side Routes
+     - [ ] Home
+     - [ ] Agents
+     - [ ] Add Agents
+     - [ ] Edit Agents
+     - [ ] Delete Agents
+     - [ ] Login
+     - [ ] Register
+     - [ ] Not found
+
+- [ ] 
+
  ______________________________________________________________________
 ## Flow Chart
  ```diff
