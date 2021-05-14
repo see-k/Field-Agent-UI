@@ -145,8 +145,8 @@ Table 1
 
 ### Notes
 Stretch goals
- - Implement full HTTP CRUD for mission.
- - Implement full HTTP CRUD for the mission/agent many-to-many relationship.
+ - Use the User API to automatically refresh the user's token before it expires
+ - Use the Validation API to validate agents in the back-end's domain layer
 
 #### Data Information
   
