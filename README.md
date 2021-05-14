@@ -22,14 +22,13 @@ _______________________________________________________
 ```
 ___________________________________________________
 ### High Level Requirements
-Implement a full CRUD UI for agents.
-M08
+#### M08
 - Display all agents.
 - Add an agent.
 - Update an agent.
 - Delete an agent.
 
-M09
+#### M09
 - Implement the required client-side routes.
 - Display a "Not Found" message if a route doesn't match one of the defined routes.
 - Create new React components as needed to support the required client-side routes.
