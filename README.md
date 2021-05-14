@@ -23,10 +23,20 @@ _______________________________________________________
 ___________________________________________________
 ### High Level Requirements
 Implement a full CRUD UI for agents.
+M08
 - Display all agents.
 - Add an agent.
 - Update an agent.
 - Delete an agent.
+
+M09
+- Implement the required client-side routes.
+- Display a "Not Found" message if a route doesn't match one of the defined routes.
+- Create new React components as needed to support the required client-side routes.
+- Implement user login and registration.
+- Require a user to login to view the Agents CRUD UI.
+- Display the logged in user's username in the header.
+- Provide a way for the user to logout.
 ___________________________________________________
 ### Instructions
 Use MySQL workbench 8.0 CE to run queries on the following files
