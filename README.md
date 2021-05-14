@@ -88,8 +88,10 @@ Along with contents already available in the field Agent Project folder, the fol
      - [ ] Login
      - [ ] Register
      - [ ] Not found
-
-- [ ] 
+    
+- [X] Step 5: HTTP Client
+    - Launch spring on terminal
+    - Send requests to test added contents in API
 
  ______________________________________________________________________
 ## Flow Chart
