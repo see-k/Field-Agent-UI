@@ -1,11 +1,33 @@
 import { useEffect, useState } from 'react';
+import {Link, useHistory, useParams} from 'react-router-dom';
 
-function UpdateAgent({agent, updateView}){
+function UpdateAgent({updateView}){
+
+    const defaultCapsule = {
+        agentId: 0,
+        firstName: "",
+        middleName: "",
+        lastName: "",
+        dob: "",
+        heightInInches: 0
+    };
+
     const [firstName, setFirstName] = useState('');
     const [middleName, setMiddleName] = useState('');
     const [lastName, setLastName] = useState('');
     const [dob, setDob] = useState('');
     const [heightInInches, setHeightInInches] = useState(0);
+    const[agent, setAgent] = useState(defaultCapsule);
+    const history = useHistory();
+    
+    const { id } = useParams();
+
+    useEffect(() => {
+        fetch(`http://localhost:8080/api/agent/${id}`)
+        .then(response => response.json())
+        .then(data => setAgent(data))
+        .catch(error => console.log(error));
+    },[id]);
 
 
     async function handleUpdate(evt){
@@ -37,7 +59,7 @@ function UpdateAgent({agent, updateView}){
                     
                 }
             })
-            .then(updateView(newAgent))
+            .then(history.push('/'))
             .catch(console.log)
     }
 
@@ -69,7 +91,7 @@ function UpdateAgent({agent, updateView}){
                         <legend><p className="text-primary"> UPDATE AGENT FORM </p></legend>
                         <div className="form-group">
                             <label for="agentIdTextBox" className="form-label mt-4">Agent ID</label>
-                            <input type="text" className="form-control" id="agentIdTextBox" readOnly="readOnly" aria-describedby="agentIdHelp" placeholder="Enter the agent's Id" value={agent.agentId} />
+                            <input type="text" className="form-control" id="agentIdTextBox" readOnly aria-describedby="agentIdHelp" placeholder="Enter the agent's Id" value={agent.agentId} />
                             <small id="agentIdHelp" className="form-text text-muted">This field cannot be empty</small>
                         </div>
                         <div className="form-group">
@@ -100,6 +122,9 @@ function UpdateAgent({agent, updateView}){
 
                         <button type="submit" className="btn btn-outline-warning">Submit</button>
                     </fieldset>
+                    <br></br>
+                    <Link className= "btn btn-outline-danger ml-2" to="/">cancel</Link>
+                    <br></br>
                 </form>
        
     );

@@ -1,30 +1,7 @@
 import Agent from './Agent';
-import UpdateAgent from './UpdateAgent';
 import { useState } from 'react';
 
-function AgentList({ agents = [], removeAgent, updateAgents }) {
-    let newAgent = {
-        agentId: 0,
-        firstName: '',
-        middleName: '',
-        lastName: '',
-        dob: '',
-        heightInInches: 0
-    };
-
-    const [agent, setAgent] = useState(newAgent);
-
-    const update = (newId, newFirstName, newMiddleName, newLastName, newDob, newHeighInInches) => {
-        newAgent.agentId = newId;
-        newAgent.firstName = newFirstName;
-        newAgent.middleName = newMiddleName;
-        newAgent.lastName = newLastName; 
-        newAgent.dob = newDob;
-        newAgent.heightInInches = newHeighInInches;
-
-        setAgent(newAgent);
-    }
-
+function AgentList({ agents = [], removeAgent }) {
     return (
         <div className="card text-white border-primary mb-3" >
             <div className="card-header">TABLE</div>
@@ -43,13 +20,9 @@ function AgentList({ agents = [], removeAgent, updateAgents }) {
                             dob={a.dob}
                             heightInInches={a.heightInInches}
                             agencies={a.agencies}
-                            removeAgent={removeAgent}
-                            updateAgent={update} />)}
+                            removeAgent={removeAgent} />)}
                     
-                    </li>   
-                    <br></br>
-                    <br></br>
-                    <UpdateAgent agent={agent} updateView={updateAgents}/>     
+                    </li>      
                 </ul>
             </div>
         </div>

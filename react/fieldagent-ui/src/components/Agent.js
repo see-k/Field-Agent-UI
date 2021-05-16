@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom';
+
 function Agent({
     agentId,
     firstName,
@@ -6,8 +8,7 @@ function Agent({
     dob,
     heightInInches,
     agencies,
-    removeAgent,
-    updateAgent }) {
+    removeAgent}) {
         const init = {
             method: "DELETE",
             headers: {
@@ -28,9 +29,6 @@ function Agent({
             const json = await response.json();
         }
 
-        const update = () => {
-            updateAgent(agentId, firstName, middleName, lastName, dob, heightInInches);
-        }
 
         return(
              <div key={agentId} className="list-group">
@@ -59,7 +57,7 @@ function Agent({
                 {agencies}
                 <br></br>
                 <br></br>
-                <button onClick={update} className="btn btn-outline-primary">Update</button>
+                <Link className= "btn btn-outline-warning ml-2" to={`/agents/edit/${agentId}`}>Update</Link>
                 <br></br>
                 <button onClick={deleteById} className="btn btn-outline-danger">Delete</button>
 

@@ -62,17 +62,6 @@ const addAgent = (agent) => {
     }
 }
 
-const updateAgents = (agent) => {
-    let newAgents = [...fieldAgents];
-    for(let i = 0; i < newAgents.length; i++){
-        if(agent.agentId === newAgents[i].agentId){
-            newAgents[i] = agent;
-        }
-    }
-
-    setFieldAgents(newAgents);
-}
-
 const removeAgent = (agentId) => {
     let newAgents = [];
 
@@ -101,7 +90,7 @@ const removeAgent = (agentId) => {
                 <div className="row">
                     <div className="col">
                         <div className="list-group">
-                            <AgentList agents={fieldAgents} removeAgent={removeAgent} updateAgents={updateAgents} />
+                            <AgentList agents={fieldAgents} removeAgent={removeAgent} />
                         </div>
                     </div>
                     <div className="col">
