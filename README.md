@@ -88,15 +88,15 @@ Along with contents already available in the field Agent Project folder, the fol
 ```diff
 - M09 CODE SEQUENCE: 05/17/2021
 ```
-- [ ] Step 6: Implement Client - Side Routes
-     - [ ] Home
-     - [ ] Agents
-     - [ ] Add Agents
-     - [ ] Edit Agents
-     - [ ] Delete Agents
-     - [ ] Login
-     - [ ] Register
-     - [ ] Not found
+- [X] Step 6: Implement Client - Side Routes
+     - [X] Home
+     - [X] Agents
+     - [X] Add Agents
+     - [X] Edit Agents
+     - [X] Delete Agents
+     - [X] Login
+     - [X] Register
+     - [X] Not found
     
 - [ ] Step 7: User Registration and Login
      - [ ] Implement user registration through endpoints
@@ -140,9 +140,9 @@ ____________________________________________________________________
 |:---:| :---: | :---:               | :---:                |:---:              |:---:
 |5.14.2021| Step 1: Research| 2 | 1:00 PM | 3:00 PM | In progress
 |5.14.2021| Step 1: Planning and diagrams  | 2 | 11:00 PM | 1:00 PM | Completed
-|5.14.2021| Step 6: Implement Client Side Routes | 2 | _ | _ | Not started
+|5.14.2021| Step 6: Implement Client Side Routes | 2 | 2:00 PM | 4:00 PM | Completed
 |5.14.2021| Step 7: Implement User Registration| 1 | _ | _ | Not started
-|5.14.2021| Step 7: Require a user to login to view the Agents CRUD UI| 1 | _ | _ | Not started
+|5.14.2021| Step 7: Require a user to login to view the Agents CRUD UI| 1 | 7:00 PM | _ | In progress
 |5.14.2021| Step 7: Display the logged in user's username in the header.| 0.5 | _ | _ | Not Started
 |5.14.2021| Step 7: Provide a way for the user to logout| 0.5 | _ | _ | Not Started
 |5.15.2021| Stretch Goal #1 | 4       | _  | _ | Not Started
