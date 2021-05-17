@@ -98,10 +98,10 @@ Along with contents already available in the field Agent Project folder, the fol
      - [X] Register
      - [X] Not found
     
-- [ ] Step 7: User Registration and Login
-     - [ ] Implement user registration through endpoints
-     - [ ] Require a user to login to view the Agents CRUD UI.
-     - [ ] Display the logged in user's username in the header.
+- [X] Step 7: User Registration and Login
+     - [X] Implement user registration through endpoints
+     - [X] Require a user to login to view the Agents CRUD UI.
+     - [X] Display the logged in user's username in the header.
      - [ ] Provide a way for the user to logout
 
  ______________________________________________________________________
