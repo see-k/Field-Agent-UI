@@ -3,13 +3,13 @@ import 'bootswatch/dist/cyborg/bootstrap.min.css'; // Added this :boom:
 import './App.css';
 import FieldAgent from './components/FieldAgent';
 import AgentList from './components/AgentList';
-import AddAgent from './components/AddAgent';
 import UpdateAgent from './components/UpdateAgent';
 import RemoveAgent from './components/RemoveAgent';
 import NotFound from './components/NotFound';
 import Login from './components/Login';
 import Register from './components/Register';
 import AuthContext from './components/AuthContext';
+import ControlPanel from './components/ControlPanel';
 import {
   BrowserRouter as Router,
   Link,
@@ -23,7 +23,7 @@ import jwt_decode from 'jwt-decode';
 function App() {
 
   const [user, setUser] = useState(null);
-
+  const [message, setMessages] = useState("Active");
   const [fieldAgents, setFieldAgents] = useState([]);
   useEffect(() => {
     fetch("http://localhost:8080/api/agent")
@@ -37,7 +37,66 @@ function App() {
         .catch(console.log("oops..."));
 }, []);
 
+//const addFetch = (agent) => {
+  async function addFetch(agent) {
+    const init = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(agent)
+    };
 
+    await fetch("http://localhost:8080/api/agent", init)
+    .then(response => {
+        if(response.status !== 201){
+            return Promise.reject("Error")
+        }
+        return response.json();
+    })
+    .then(json => {
+        setFieldAgents([...fieldAgents, json]);
+        setMessages("");
+    })
+    .catch(console.log);
+
+}
+
+const addAgent = (agent) => {
+    let canSet = true;
+
+    for(let i = 0; i < fieldAgents.length; i++){
+        if(agent.firstName === fieldAgents[i].firstName &&
+            agent.lastName === fieldAgents[i].lastName){
+            canSet = false;
+        }
+    }
+
+    if(canSet){
+        addFetch(agent);
+    }else{
+        setMessages("Agent with this information is already active");
+    }
+}
+
+const removeAgent = (agentId) => {
+  let newAgents = [];
+
+  for(let i = 0; i < fieldAgents.length; i++){
+      if(fieldAgents[i].agentId !== agentId){
+          newAgents.push(fieldAgents[i]);
+      }
+  }
+
+  if(newAgents.length !== fieldAgents.length){
+      setFieldAgents(newAgents);
+      setMessages("");
+  }else{
+      setMessages("Could not find agent to deactivate");
+  }
+
+}
 
   const login = (token) => {
     const {id, sub: username, roles: rolesString } = jwt_decode(token);
@@ -135,7 +194,11 @@ function App() {
               )}
             </Route>
             <Route path="/agents/add">
-              <AddAgent />
+            {user ? (
+                <ControlPanel parentAddAgent={addAgent}/>
+              ) : (
+                <Redirect to="/login" />
+              )}
             </Route>
             <Route path="/agents/edit/:id">
               {user ? (
@@ -145,10 +208,18 @@ function App() {
               )}
             </Route>
             <Route path="/agents/delete/:id">
-              <RemoveAgent />
+            {user ? (
+                <RemoveAgent />
+              ) : (
+                <Redirect to="/login" />
+              )}
             </Route>
             <Route path="/agents">
-              <AgentList agents={fieldAgents} />
+            {user ? (
+                <AgentList agents={fieldAgents} />
+              ) : (
+                <Redirect to="/login" />
+              )}
             </Route>
             <Route path="/login">
               <Login />

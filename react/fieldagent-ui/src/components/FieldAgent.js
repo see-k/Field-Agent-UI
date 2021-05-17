@@ -4,84 +4,10 @@ import ControlPanel from './ControlPanel';
 import Messages from './Messages';
 import AuthContext from "./AuthContext";
 
+
 function FieldAgent() {
     const auth = useContext(AuthContext);
-    const [fieldAgents, setFieldAgents] = useState([]);
-    const [message, setMessages] = useState("Active");
-
-    useEffect(() => {
-        fetch("http://localhost:8080/api/agent")
-            .then(response => {
-                if (response.status !== 200) {
-                    return Promise.reject("get didn't work ...");
-                }
-                return response.json();
-            })
-            .then(json => setFieldAgents(json))
-            .catch(console.log("oops..."));
-    }, []);
-
-//const addFetch = (agent) => {
-async function addFetch(agent) {
-    const init = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify(agent)
-    };
-
-    await fetch("http://localhost:8080/api/agent", init)
-    .then(response => {
-        if(response.status !== 201){
-            return Promise.reject("Error")
-        }
-        return response.json();
-    })
-    .then(json => {
-        setFieldAgents([...fieldAgents, json]);
-        setMessages("");
-    })
-    .catch(console.log);
-
-}
-
-const addAgent = (agent) => {
-    let canSet = true;
-
-    for(let i = 0; i < fieldAgents.length; i++){
-        if(agent.firstName === fieldAgents[i].firstName &&
-            agent.lastName === fieldAgents[i].lastName){
-            canSet = false;
-        }
-    }
-
-    if(canSet){
-        addFetch(agent);
-    }else{
-        setMessages("Agent with this ID is already active");
-    }
-}
-
-const removeAgent = (agentId) => {
-    let newAgents = [];
-
-    for(let i = 0; i < fieldAgents.length; i++){
-        if(fieldAgents[i].agentId !== agentId){
-            newAgents.push(fieldAgents[i]);
-        }
-    }
-
-    if(newAgents.length !== fieldAgents.length){
-        setFieldAgents(newAgents);
-        setMessages("");
-    }else{
-        setMessages("Could not find agent to deactivate");
-    }
-
-}
-
+    
     return (
         <div className="card bg-light mb-3">
         <div className="card-header">
@@ -92,11 +18,16 @@ const removeAgent = (agentId) => {
                 <div className="row">
                     <div className="col">
                         <div className="list-group">
-                            <AgentList agents={fieldAgents} removeAgent={removeAgent} />
+                        <figure>
+                                <blockquote class="blockquote">
+                                    <p class="mb-0">"Of all those in the army close to the commander none is more intimate than the secret agent; of all rewards none more liberal than those given to secret agents; of all matters none is more confidential than those relating to secret operations."</p>
+
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                    Sun Tzu <cite title="Source Title">"The Art of War" by Sun Tzu, translated by Chow-Hou Wee, (Chapter XIII), 2003.</cite>
+                                </figcaption>
+                            </figure>
                         </div>
-                    </div>
-                    <div className="col">
-                        <ControlPanel parentAddAgent={addAgent} />
                     </div>
                 </div>
             </div>

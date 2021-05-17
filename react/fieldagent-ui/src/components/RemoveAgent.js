@@ -1,11 +1,26 @@
 import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 function RemoveAgent({removeAgent}) {
     const [agentId, setAgentId] = useState(0);
+    const history = useHistory();
     
-    const handleRemoveAgent = (event) => {
-        event.preventDefault();
-        removeAgent(agentId);
+    const init = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    };
+
+    const handleRemoveAgent = async (event) => {
+        const response = await fetch(`http://localhost:8080/api/agent/${agentId}`, init)
+            if(response.status === 204 || response.status === 404){
+                removeAgent(agentId);
+            } else{
+                return Promise.reject(`delete found with status  ${response.status}`);
+            }
+            const json = await response.json();
     }
 
     const handleAgentIdChange = (event) => {

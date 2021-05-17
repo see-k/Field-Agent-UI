@@ -58,8 +58,6 @@ function Agent({
                 <br></br>
                 <br></br>
                 <Link className= "btn btn-outline-warning ml-2" to={`/agents/edit/${agentId}`}>Update</Link>
-                <br></br>
-                <button onClick={deleteById} className="btn btn-outline-danger">Delete</button>
 
             </div> 
         );

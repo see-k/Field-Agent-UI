@@ -52,14 +52,14 @@ function UpdateAgent({updateView}){
             body: JSON.stringify(newAgent)
         };
 
-            fetch(`http://localhost:8080/api/agent/${newAgent.agentId}`, init)
+           await fetch(`http://localhost:8080/api/agent/${newAgent.agentId}`, init)
             .then(response => {
                 if(response.status !== 204){
                     return Promise.reject(`Update Failed`);
                     
                 }
             })
-            .then(history.push('/'))
+            .then(history.push('/agents'))
             .catch(console.log)
     }
 
@@ -89,6 +89,8 @@ function UpdateAgent({updateView}){
              <form onSubmit={handleUpdate}>
                     <fieldset>
                         <legend><p className="text-primary"> UPDATE AGENT FORM </p></legend>
+                        <p className="text-danger">Important!</p>
+                         <p className="text-warning">DO NOT SKIP ANY FIELDS! Re-enter existing enteries in a field if you do not intend to alter them </p>
                         <div className="form-group">
                             <label for="agentIdTextBox" className="form-label mt-4">Agent ID</label>
                             <input type="text" className="form-control" id="agentIdTextBox" readOnly aria-describedby="agentIdHelp" placeholder="Enter the agent's Id" value={agent.agentId} />

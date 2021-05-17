@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 function AddAgent({addAgent}) {
     const [firstName, setFirstName] = useState('');
@@ -6,6 +7,7 @@ function AddAgent({addAgent}) {
     const [lastName, setLastName] = useState('');
     const [dob, setDob] = useState('');
     const [heightInInches, setHeightInInches] = useState(0);
+    const history = useHistory();
 
     const handleAddAgent = (event) => {
         event.preventDefault();
@@ -28,6 +30,7 @@ function AddAgent({addAgent}) {
             agent["dob"] = dob;
             agent["heightInInches"] = heightInInches;
             addAgent(agent);
+            history.push('/agents');
         }
     }
 
@@ -84,8 +87,8 @@ function AddAgent({addAgent}) {
                             <input type="text" className="form-control" id="heightInInchesTextBox" onChange={handleHeightInInchesChange} aria-describedby="heightInInchesHelp" placeholder="Enter your height in inches" />
                             <small id="heightInInchesHelp" className="form-text text-muted">This field cannot be empty</small>
                         </div>
-
                         <button type="submit" className="btn btn-outline-warning">Submit</button>
+                    
                     </fieldset>
                 </form>
             </div>
