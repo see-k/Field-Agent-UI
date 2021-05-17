@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import AgentList from './AgentList';
 import ControlPanel from './ControlPanel';
 import Messages from './Messages';
+import AuthContext from "./AuthContext";
 
 function FieldAgent() {
+    const auth = useContext(AuthContext);
     const [fieldAgents, setFieldAgents] = useState([]);
     const [message, setMessages] = useState("Active");
 
@@ -83,7 +85,7 @@ const removeAgent = (agentId) => {
     return (
         <div className="card bg-light mb-3">
         <div className="card-header">
-            <h2 className="text-primary">M08: Field Agent Terminal</h2>
+            <h4 className="text-primary">Welcome Agent {auth.user.username}</h4>
             </div>
             <div className="card-body">
                 <h4 className="card-title">Home</h4>

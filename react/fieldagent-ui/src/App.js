@@ -2,12 +2,14 @@ import React from 'react';
 import 'bootswatch/dist/cyborg/bootstrap.min.css'; // Added this :boom:
 import './App.css';
 import FieldAgent from './components/FieldAgent';
-import Agents from './components/AgentList'
-import AddAgent from './components/AddAgent'
-import UpdateAgent from './components/UpdateAgent'
-import RemoveAgent from './components/RemoveAgent'
-import NotFound from './components/NotFound'
-import Login from './components/Login'
+import Agents from './components/AgentList';
+import AddAgent from './components/AddAgent';
+import UpdateAgent from './components/UpdateAgent';
+import RemoveAgent from './components/RemoveAgent';
+import NotFound from './components/NotFound';
+import Login from './components/Login';
+import Register from './components/Register';
+import AuthContext from './components/AuthContext';
 import {
   BrowserRouter as Router,
   Link,
@@ -17,82 +19,130 @@ import {
 } from 'react-router-dom';
 import AgentList from './components/AgentList';
 import { useState } from 'react';
+import jwt_decode from 'jwt-decode';
 
 function App() {
 
   const [user, setUser] = useState(null);
 
+  const login = (token) => {
+    const {id, sub: username, roles: rolesString } = jwt_decode(token);
+    const roles = rolesString.split(',');
+
+    const user = {
+      id, 
+      username,
+      roles,
+      token,
+      hasRole(role){
+        return this.roles.includes(role);
+      }
+    }
+
+    setUser(user);
+  }
+
+  const authenticate = async (username, password) => {
+    const response = await fetch('http://localhost:5000/authenticate', {
+      method: 'POST',
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        username,
+        password
+      })
+    });
+
+    if(response.status === 200) {
+      const { jwt_token } = await response.json();
+      login(jwt_token);
+    } else if (response.status === 403) {
+      throw new Error('Bad username or password');
+    } else {
+      throw new Error('There was a problem logging you in')
+    }
+  }
+
+  const logout = () => {
+    setUser(null);
+  }
+
+  const auth = {
+    user,
+    authenticate,
+    logout
+  }
+
   return (
     <div className="App">
-      <Router>
-        <ul className="nav nav-tabs">
-          <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="tab" href="#home"> 
-              <Link to="/">Home</Link>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="tab" href="#Agents">
-              <Link to="/agents">Agents</Link>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="tab" href="#addAgent">
-            <Link to="/agents/add">Add Agent</Link>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="tab" href="#editAgent">
-              <Link to="/agents/edit/:id">Edit Agent</Link>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="tab" href="#deleteAgent">
-              <Link to="/agents/delete/:id">Delete Agent</Link>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="tab" href="#login">Login</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="tab" href="#Register">Register</a>
-          </li>
-        </ul>
+      <AuthContext.Provider value={auth}>
+        <Router>
+          <ul className="nav nav-tabs">
+            <li className="nav-item">
+              <a className="nav-link" data-bs-toggle="tab" href="#home">
+                <Link to="/">Home</Link>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" data-bs-toggle="tab" href="#Agents">
+                <Link to="/agents">Agents</Link>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" data-bs-toggle="tab" href="#addAgent">
+                <Link to="/agents/add">Add Agent</Link>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" data-bs-toggle="tab" href="#editAgent">
+                <Link to="/agents/edit/:id">Edit Agent</Link>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" data-bs-toggle="tab" href="#deleteAgent">
+                <Link to="/agents/delete/:id">Delete Agent</Link>
+              </a>
+            </li>
+          </ul>
 
 
-        <Switch>
-          <Route exact path="/">
-            {user ? (
-              <FieldAgent />
-            ) : (
-              <Redirect to="/login" />
-            )}
-          </Route>
-          <Route path="/agents/add">
-            <AddAgent />
-          </Route>
-          <Route path="/agents/edit/:id">
-            {user ? (
-              <UpdateAgent />
-            ) : (
-              <Redirect to="/login" />
-            )}
-          </Route>
-          <Route path="/agents/delete/:id">
-            <RemoveAgent />
-          </Route>
-          <Route path="/agents">
-            <Agents />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
-      </Router>
-
+          <Switch>
+            <Route exact path="/">
+              {user ? (
+                <FieldAgent />
+              ) : (
+                <Redirect to="/login" />
+              )}
+            </Route>
+            <Route path="/agents/add">
+              <AddAgent />
+            </Route>
+            <Route path="/agents/edit/:id">
+              {user ? (
+                <UpdateAgent />
+              ) : (
+                <Redirect to="/login" />
+              )}
+            </Route>
+            <Route path="/agents/delete/:id">
+              <RemoveAgent />
+            </Route>
+            <Route path="/agents">
+              <Agents />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register/>
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+        </Router>
+      </AuthContext.Provider>
     </div>
   );
 }
